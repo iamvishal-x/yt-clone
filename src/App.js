@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Navbars />
         <Routes>
-          <Route exact path="/" element={<Landing />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/:search" element={<Home />} />
         </Routes>
       </BrowserRouter>
