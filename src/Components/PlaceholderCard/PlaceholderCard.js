@@ -1,10 +1,11 @@
-import React from "react";
 import { Card, Placeholder } from "react-bootstrap";
-
+import "./PlaceholderCard.css";
+import yt from "../../Resources/Images/yt.svg";
 const PlaceholderCard = () => {
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card className="placeholdercard">
+        <Card.Img src={yt} className="placeholdercard__img" />
         <Card.Body>
           <Placeholder as={Card.Title} animation="glow">
             <Placeholder xs={6} />

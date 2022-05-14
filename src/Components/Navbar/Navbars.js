@@ -1,21 +1,16 @@
 import { useEffect, useState } from "react";
-import {
-  Container,
-  Form,
-  FormControl,
-  Nav,
-  Navbar,
-  Button,
-} from "react-bootstrap";
+import { Container, Form, FormControl, Nav, Navbar } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import yt from "../../Resources/Images/yt.svg";
 
 const Navbars = () => {
   const navigate = useNavigate();
-  const [search, setSearch] = useState("");
+
+  const [searchInput, setSearchInput] = useState("");
   useEffect(() => {
-    search.length > 2 && navigate(`/${search}`);
-  }, [search]);
+    searchInput.length > 2 ? navigate(`/${searchInput}`) : navigate("/");
+  }, [searchInput]);
+
   return (
     <>
       <Navbar
@@ -46,10 +41,9 @@ const Navbars = () => {
                   placeholder="Search Videos"
                   className="me-2"
                   aria-label="Search"
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
                 />
-                {/* <Button variant="outline-success">Search</Button> */}
               </Form>
             </Nav>
           </Navbar.Collapse>
